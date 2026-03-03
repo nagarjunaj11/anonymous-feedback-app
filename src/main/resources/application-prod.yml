@@ -1,10 +1,7 @@
 # Production Profile - PostgreSQL Database
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/anonymous_feedback_db
     driver-class-name: org.postgresql.Driver
-    username: postgres
-    password: root
 
   jpa:
     properties:
