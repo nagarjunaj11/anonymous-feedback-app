@@ -167,24 +167,44 @@ const LandingPage = () => {
           </div>
           <div className="use-cases-grid">
             <div className="use-case-card card">
-              <div className="use-case-emoji">👔</div>
-              <h3>Managers</h3>
-              <p>Get honest feedback from your team without fear of judgment. Improve team dynamics and workplace culture.</p>
+              <div className="use-case-emoji">💻</div>
+              <h3>Tech Companies</h3>
+              <p>Monthly customer feedback, NPS surveys, feature requests at scale.</p>
             </div>
             <div className="use-case-card card">
-              <div className="use-case-emoji">🎥</div>
-              <h3>Content Creators</h3>
-              <p>Receive genuine feedback from your audience. Understand what your viewers really think about your content.</p>
-            </div>
-            <div className="use-case-card card">
-              <div className="use-case-emoji">🎓</div>
-              <h3>Students & Teachers</h3>
-              <p>Collect peer feedback, course evaluations, or project reviews in a safe, anonymous environment.</p>
+              <div className="use-case-emoji">🏢</div>
+              <h3>Startups</h3>
+              <p>Validate product-market fit with honest user insights.</p>
             </div>
             <div className="use-case-card card">
               <div className="use-case-emoji">💼</div>
-              <h3>Professionals</h3>
-              <p>Gather career advice, mentorship feedback, or professional development insights anonymously.</p>
+              <h3>Product Managers</h3>
+              <p>Understand real user pain points without bias.</p>
+            </div>
+            <div className="use-case-card card">
+              <div className="use-case-emoji">👔</div>
+              <h3>Team Leaders</h3>
+              <p>Build psychological safety in remote/hybrid teams.</p>
+            </div>
+            <div className="use-case-card card">
+              <div className="use-case-emoji">🎬</div>
+              <h3>Content Creators</h3>
+              <p>Get honest opinions on videos, posts, courses.</p>
+            </div>
+            <div className="use-case-card card">
+              <div className="use-case-emoji">📚</div>
+              <h3>Educators</h3>
+              <p>Gather candid student feedback on teaching quality.</p>
+            </div>
+            <div className="use-case-card card">
+              <div className="use-case-emoji">🎤</div>
+              <h3>Public Speakers</h3>
+              <p>Improve based on genuine audience reactions.</p>
+            </div>
+            <div className="use-case-card card">
+              <div className="use-case-emoji">🎨</div>
+              <h3>Freelancers</h3>
+              <p>Collect testimonials and identify improvement areas.</p>
             </div>
           </div>
         </div>
