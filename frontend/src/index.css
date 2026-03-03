@@ -100,3 +100,6 @@ code {
 .slide-in {
   animation: slideIn 0.5s ease-in-out;
 }
+
+/* Import Mobile Responsive Fixes */
+@import './mobile-fixes.css';
