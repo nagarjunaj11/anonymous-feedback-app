@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaLock, FaShareAlt, FaComments, FaStar, FaUsers, FaChartLine, FaPlay, FaTimes, FaHeart, FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaLock, FaShareAlt, FaComments, FaStar, FaUsers, FaChartLine, FaPlay, FaTimes, FaHeart, FaEnvelope } from 'react-icons/fa';
 import { SiPhonepe, SiGooglepay, SiPaytm } from 'react-icons/si';
 import './LandingPage.css';
 

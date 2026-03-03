@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
 import {
-  FaPlus, FaSignOutAlt, FaComments, FaCopy, FaTrash, FaEye, FaShareAlt,
-  FaWhatsapp, FaFacebook, FaTwitter, FaTelegram, FaEnvelope, FaCheckCircle,
+  FaPlus, FaSignOutAlt, FaComments, FaCopy, FaTrash, FaEye,
+  FaWhatsapp, FaFacebook, FaTwitter, FaCheckCircle,
   FaTimesCircle, FaInfoCircle, FaExclamationTriangle, FaCog
 } from 'react-icons/fa';
 import { feedbackAPI } from '../services/api';
@@ -30,10 +29,6 @@ const Dashboard = () => {
   const [messageTitle, setMessageTitle] = useState('');
   const [messageText, setMessageText] = useState('');
 
-  useEffect(() => {
-    loadForms();
-  }, []);
-
   // Helper function to show centered messages
   const showCenteredMessage = (type, title, text, autoClose = false, closeDelay = 3000) => {
     setMessageType(type);
@@ -48,7 +43,7 @@ const Dashboard = () => {
     }
   };
 
-  const loadForms = async () => {
+  const loadForms = useCallback(async () => {
     try {
       const response = await feedbackAPI.getMyForms();
       setForms(response.data);
@@ -59,7 +54,12 @@ const Dashboard = () => {
     } finally {
       setLoading(false);
     }
-  };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    loadForms();
+  }, [loadForms]);
 
   const handleLogout = () => {
     localStorage.removeItem('token');

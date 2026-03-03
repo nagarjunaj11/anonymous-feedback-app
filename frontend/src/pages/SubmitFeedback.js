@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import { FaComments, FaStar, FaPaperPlane, FaHeart, FaQrcode, FaCheckCircle, FaTimesCircle, FaInfoCircle, FaExclamationTriangle } from 'react-icons/fa';
+import { FaComments, FaStar, FaPaperPlane, FaHeart, FaCheckCircle, FaTimesCircle, FaInfoCircle, FaExclamationTriangle } from 'react-icons/fa';
 import { SiPhonepe, SiGooglepay, SiPaytm } from 'react-icons/si';
 import { publicAPI } from '../services/api';
 import './SubmitFeedback.css';
@@ -22,10 +21,6 @@ const SubmitFeedback = () => {
   const [messageTitle, setMessageTitle] = useState('');
   const [messageText, setMessageText] = useState('');
 
-  useEffect(() => {
-    loadFormInfo();
-  }, [uniqueLink]);
-
   // Helper function to show centered messages
   const showCenteredMessage = (type, title, text, autoClose = false, closeDelay = 3000) => {
     setMessageType(type);
@@ -40,7 +35,7 @@ const SubmitFeedback = () => {
     }
   };
 
-  const loadFormInfo = async () => {
+  const loadFormInfo = useCallback(async () => {
     try {
       const response = await publicAPI.getFeedbackForm(uniqueLink);
       setFormInfo(response.data);
@@ -49,7 +44,12 @@ const SubmitFeedback = () => {
     } finally {
       setLoading(false);
     }
-  };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [uniqueLink]);
+
+  useEffect(() => {
+    loadFormInfo();
+  }, [loadFormInfo]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
 import { FaComments, FaUser, FaEnvelope, FaLock, FaBriefcase, FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
 import { authAPI } from '../services/api';
 import './Auth.css';

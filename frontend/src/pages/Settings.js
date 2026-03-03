@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { FaComments, FaUser, FaEnvelope, FaLock, FaSave, FaArrowLeft, FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
 import { SiPhonepe, SiGooglepay, SiPaytm } from 'react-icons/si';
@@ -29,10 +29,6 @@ const Settings = () => {
   const [messageTitle, setMessageTitle] = useState('');
   const [messageText, setMessageText] = useState('');
 
-  useEffect(() => {
-    loadProfile();
-  }, []);
-
   const showCenteredMessage = (type, title, text, autoClose = false, closeDelay = 3000) => {
     setMessageType(type);
     setMessageTitle(title);
@@ -46,7 +42,7 @@ const Settings = () => {
     }
   };
 
-  const loadProfile = async () => {
+  const loadProfile = useCallback(async () => {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.get(`${process.env.REACT_APP_API_URL || 'http://localhost:8081/api'}/user/profile`, {
@@ -68,7 +64,12 @@ const Settings = () => {
     } finally {
       setLoading(false);
     }
-  };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    loadProfile();
+  }, [loadProfile]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
