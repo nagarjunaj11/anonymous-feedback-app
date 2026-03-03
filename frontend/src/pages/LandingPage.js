@@ -104,6 +104,66 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Shocking Stats Section */}
+      <section className="shocking-stats">
+        <div className="container">
+          <div className="stats-content">
+            <div className="stats-header">
+              <h2 className="stats-title">
+                💥 What if I told you <span className="highlight-text">67% of your churned customers</span> tried to tell you why they left?
+              </h2>
+              <p className="stats-subtitle">But they didn't feel safe doing it.</p>
+            </div>
+
+            <div className="stats-grid">
+              <div className="stat-card card">
+                <div className="stat-icon">📊</div>
+                <div className="stat-big-number">67%</div>
+                <p className="stat-description">of customers who churn <strong>never complained</strong></p>
+              </div>
+
+              <div className="stat-card card">
+                <div className="stat-icon">💬</div>
+                <div className="stat-big-number">85%</div>
+                <p className="stat-description">of those had <strong>specific feedback</strong></p>
+              </div>
+
+              <div className="stat-card card">
+                <div className="stat-icon">😰</div>
+                <div className="stat-big-number">Only 4%</div>
+                <p className="stat-description">felt comfortable <strong>being critical</strong></p>
+              </div>
+            </div>
+
+            <div className="stats-translation">
+              <h3>Translation?</h3>
+              <p className="translation-title">For every <span className="number-highlight">10 customers</span> you lose:</p>
+              <div className="translation-points">
+                <div className="translation-point">
+                  <span className="point-icon">✓</span>
+                  <span>6-7 know exactly what's wrong</span>
+                </div>
+                <div className="translation-point">
+                  <span className="point-icon">✓</span>
+                  <span>They wanted to tell you</span>
+                </div>
+                <div className="translation-point">
+                  <span className="point-icon">✗</span>
+                  <span><strong>Fear stopped them</strong></span>
+                </div>
+              </div>
+            </div>
+
+            <div className="stats-cta">
+              <p className="cta-question">Ready to hear what they really think?</p>
+              <Link to="/register" className="btn btn-primary btn-lg pulse-animation">
+                Start Collecting Honest Feedback Now
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="features">
         <div className="container">
