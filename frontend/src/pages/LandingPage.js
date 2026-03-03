@@ -241,7 +241,7 @@ const LandingPage = () => {
             </div>
             <div className="footer-section">
               <h4>Contact Us</h4>
-              <p style={{ marginBottom: '12px', fontWeight: '600', color: '#1e293b' }}>Nagarjuna Janapati</p>
+              <p style={{ marginBottom: '12px', fontWeight: '600', color: '#ffffff' }}>Nagarjuna Janapati</p>
 
               <a href="mailto:nagarjunaj938@gmail.com" style={{ display: 'flex', alignItems: 'center', marginBottom: '10px', color: '#6366f1', textDecoration: 'none', fontSize: '14px' }}>
                 <FaEnvelope style={{ marginRight: '8px', flexShrink: 0 }} />
@@ -256,6 +256,7 @@ const LandingPage = () => {
               <div style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px', color: '#64748b', fontSize: '14px' }}>
                 <FaMapMarkerAlt style={{ marginRight: '8px', marginTop: '3px', flexShrink: 0 }} />
                 <span>
+                  Plot No - 43,<br />
                   Central Park-1<br />
                   Kondapur<br />
                   Hyderabad
