@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaLock, FaShareAlt, FaComments, FaStar, FaUsers, FaChartLine, FaPlay, FaTimes, FaHeart, FaEnvelope } from 'react-icons/fa';
+import { FaLock, FaShareAlt, FaComments, FaStar, FaUsers, FaChartLine, FaPlay, FaTimes, FaHeart, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 import { SiPhonepe, SiGooglepay, SiPaytm } from 'react-icons/si';
 import './LandingPage.css';
 
@@ -240,9 +240,29 @@ const LandingPage = () => {
               <Link to="/login">Login</Link>
             </div>
             <div className="footer-section">
-              <h4>Support</h4>
-              <Link to="/register">Help Center</Link>
-              <button onClick={handleSupportUs} className="footer-link-btn">
+              <h4>Contact Us</h4>
+              <p style={{ marginBottom: '12px', fontWeight: '600', color: '#1e293b' }}>Nagarjuna Janapati</p>
+
+              <a href="mailto:nagarjunaj938@gmail.com" style={{ display: 'flex', alignItems: 'center', marginBottom: '10px', color: '#6366f1', textDecoration: 'none', fontSize: '14px' }}>
+                <FaEnvelope style={{ marginRight: '8px', flexShrink: 0 }} />
+                <span>nagarjunaj938@gmail.com</span>
+              </a>
+
+              <a href="tel:+919550016447" style={{ display: 'flex', alignItems: 'center', marginBottom: '10px', color: '#6366f1', textDecoration: 'none', fontSize: '14px' }}>
+                <FaPhone style={{ marginRight: '8px', flexShrink: 0 }} />
+                <span>(+91) 9550016447</span>
+              </a>
+
+              <div style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px', color: '#64748b', fontSize: '14px' }}>
+                <FaMapMarkerAlt style={{ marginRight: '8px', marginTop: '3px', flexShrink: 0 }} />
+                <span>
+                  Central Park-1<br />
+                  Kondapur<br />
+                  Hyderabad
+                </span>
+              </div>
+
+              <button onClick={handleSupportUs} className="footer-link-btn" style={{ marginTop: '12px' }}>
                 <FaHeart /> Support Us
               </button>
             </div>
