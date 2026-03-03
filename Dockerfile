@@ -1,22 +1,22 @@
-# Use Java 17 base image
-FROM eclipse-temurin:17-jdk-alpine AS build
+# Build stage - Use Maven image with Java 17
+FROM maven:3.9-eclipse-temurin-17-alpine AS build
 
 # Set working directory
 WORKDIR /app
 
-# Copy Maven files
+# Copy pom.xml first (for better layer caching)
 COPY pom.xml .
-COPY mvnw .
-COPY .mvn .mvn
+
+# Download dependencies (cached if pom.xml unchanged)
+RUN mvn dependency:go-offline -B
 
 # Copy source code
 COPY src ./src
 
 # Build the application
-RUN chmod +x mvnw
-RUN ./mvnw clean package -DskipTests
+RUN mvn clean package -DskipTests -B
 
-# Runtime stage
+# Runtime stage - Use smaller JRE image
 FROM eclipse-temurin:17-jre-alpine
 
 WORKDIR /app
