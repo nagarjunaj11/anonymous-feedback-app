@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: anonymous-feedback-backend
+    runtime: java
+    buildCommand: mvn clean install -DskipTests
+    startCommand: java -jar target/*.jar
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
